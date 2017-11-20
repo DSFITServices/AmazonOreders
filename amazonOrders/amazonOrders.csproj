@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEFFBD55-2C0B-4528-8444-27159AD39F97}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>amazonOrders</RootNamespace>
+    <AssemblyName>amazonOrders</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MWSClientCsRuntime-1.0, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MWSClientCsRuntime.1.0.0\lib\net20\MWSClientCsRuntime-1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AmazonOrderProcessing.cs" />
+    <Compile Include="MWSLib\Attributes\MarketplaceWebServiceAttribute.cs" />
+    <Compile Include="MWSLib\Attributes\MarketplaceWebServiceStreamAttribute.cs" />
+    <Compile Include="MWSLib\Attributes\RequestType.cs" />
+    <Compile Include="MWSLib\Attributes\ResponseType.cs" />
+    <Compile Include="MWSLib\Attributes\StreamType.cs" />
+    <Compile Include="MWSLib\MarketplaceWebService.cs" />
+    <Compile Include="MWSLib\MarketplaceWebServiceClient.cs" />
+    <Compile Include="MWSLib\MarketplaceWebServiceConfig.cs" />
+    <Compile Include="MWSLib\MarketplaceWebServiceException.cs" />
+    <Compile Include="MWSLib\Model\CancelFeedSubmissionsRequest.cs" />
+    <Compile Include="MWSLib\Model\CancelFeedSubmissionsResponse.cs" />
+    <Compile Include="MWSLib\Model\CancelFeedSubmissionsResult.cs" />
+    <Compile Include="MWSLib\Model\CancelledReportRequestList.cs" />
+    <Compile Include="MWSLib\Model\CancelReportRequestsRequest.cs" />
+    <Compile Include="MWSLib\Model\CancelReportRequestsResponse.cs" />
+    <Compile Include="MWSLib\Model\CancelReportRequestsResult.cs" />
+    <Compile Include="MWSLib\Model\ContentType.cs" />
+    <Compile Include="MWSLib\Model\Error.cs" />
+    <Compile Include="MWSLib\Model\ErrorResponse.cs" />
+    <Compile Include="MWSLib\Model\FeedSubmissionInfo.cs" />
+    <Compile Include="MWSLib\Model\FeedSubmissionList.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionCountRequest.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionCountResponse.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionCountResult.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListByNextTokenRequest.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListByNextTokenResponse.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListByNextTokenResult.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListRequest.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListResponse.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionListResult.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionResultRequest.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionResultResponse.cs" />
+    <Compile Include="MWSLib\Model\GetFeedSubmissionResultResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportCountRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportCountResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportCountResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportListByNextTokenRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportListByNextTokenResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportListByNextTokenResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportListRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportListResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportListResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestCountRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestCountResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestCountResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListByNextTokenRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListByNextTokenResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListByNextTokenResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportRequestListResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleCountRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleCountResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleCountResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListByNextTokenRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListByNextTokenResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListByNextTokenResult.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListRequest.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListResponse.cs" />
+    <Compile Include="MWSLib\Model\GetReportScheduleListResult.cs" />
+    <Compile Include="MWSLib\Model\IContentTypeParameter.cs" />
+    <Compile Include="MWSLib\Model\IdList.cs" />
+    <Compile Include="MWSLib\Model\ManageReportScheduleList.cs" />
+    <Compile Include="MWSLib\Model\ManageReportScheduleRequest.cs" />
+    <Compile Include="MWSLib\Model\ManageReportScheduleResponse.cs" />
+    <Compile Include="MWSLib\Model\ManageReportScheduleResult.cs" />
+    <Compile Include="MWSLib\Model\MediaType.cs" />
+    <Compile Include="MWSLib\Model\Report.cs" />
+    <Compile Include="MWSLib\Model\ReportInfo.cs" />
+    <Compile Include="MWSLib\Model\ReportList.cs" />
+    <Compile Include="MWSLib\Model\ReportRequestInfo.cs" />
+    <Compile Include="MWSLib\Model\ReportRequestList.cs" />
+    <Compile Include="MWSLib\Model\ReportSchedule.cs" />
+    <Compile Include="MWSLib\Model\ReportScheduleList.cs" />
+    <Compile Include="MWSLib\Model\RequestReportRequest.cs" />
+    <Compile Include="MWSLib\Model\RequestReportResponse.cs" />
+    <Compile Include="MWSLib\Model\RequestReportResult.cs" />
+    <Compile Include="MWSLib\Model\ResponseHeaderMetadata.cs" />
+    <Compile Include="MWSLib\Model\ResponseMetadata.cs" />
+    <Compile Include="MWSLib\Model\StatusList.cs" />
+    <Compile Include="MWSLib\Model\SubmitFeedRequest.cs" />
+    <Compile Include="MWSLib\Model\SubmitFeedResponse.cs" />
+    <Compile Include="MWSLib\Model\SubmitFeedResult.cs" />
+    <Compile Include="MWSLib\Model\TypeList.cs" />
+    <Compile Include="MWSLib\Model\UpdatedReportAcknowledgementList.cs" />
+    <Compile Include="MWSLib\Model\UpdateReportAcknowledgementsRequest.cs" />
+    <Compile Include="MWSLib\Model\UpdateReportAcknowledgementsResponse.cs" />
+    <Compile Include="MWSLib\Model\UpdateReportAcknowledgementsResult.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
